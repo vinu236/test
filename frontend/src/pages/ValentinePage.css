@@ -1,0 +1,298 @@
+/* ============================================
+   Valentine Proposal Page Styles
+   ============================================ */
+
+.valentine-container {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 520px;
+  width: 90%;
+  padding: 40px 30px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+  border-radius: 30px;
+  border: 1px solid rgba(255, 107, 129, 0.25);
+  box-shadow:
+    0 25px 80px rgba(255, 71, 87, 0.15),
+    0 0 100px rgba(255, 107, 129, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Photo Section */
+.photo-section {
+  margin-bottom: 24px;
+}
+
+.photo-frame {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-glow {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #ff6b81, #ff4757, #ff6b81, #c44569, #ff6b81);
+  animation: rotateGlow 4s linear infinite;
+  z-index: 0;
+}
+
+@keyframes rotateGlow {
+  to { transform: rotate(360deg); }
+}
+
+.photo {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 1;
+  border: 3px solid #1a0a1e;
+}
+
+.photo-placeholder {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2d1135, #3d1f45);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  border: 3px solid #1a0a1e;
+}
+
+.placeholder-emoji {
+  font-size: 40px;
+  margin-bottom: 4px;
+}
+
+.placeholder-text {
+  font-size: 11px;
+  font-weight: 600;
+  color: #ff6b81;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.photo-hearts {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 4px;
+  z-index: 2;
+  animation: bounceHearts 2s ease-in-out infinite;
+}
+
+.photo-hearts span {
+  font-size: 16px;
+  filter: drop-shadow(0 0 4px rgba(255, 107, 129, 0.6));
+}
+
+@keyframes bounceHearts {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-8px); }
+}
+
+/* Question Section */
+.question-section {
+  margin-bottom: 32px;
+}
+
+.envelope-icon {
+  font-size: 40px;
+  margin-bottom: 16px;
+  display: inline-block;
+  animation: pulse 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 12px rgba(255, 107, 129, 0.5));
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+.title {
+  font-family: 'Great Vibes', cursive;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.title-line-1 {
+  display: block;
+  font-size: 28px;
+  color: #e8b4c8;
+  font-weight: 400;
+}
+
+.title-line-2 {
+  display: block;
+  font-size: 56px;
+  background: linear-gradient(135deg, #ff6b81, #ff4757, #ff6b81);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 20px rgba(255, 107, 129, 0.4));
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { filter: drop-shadow(0 0 20px rgba(255, 107, 129, 0.4)); }
+  50% { filter: drop-shadow(0 0 40px rgba(255, 107, 129, 0.7)); }
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #c8a0b0;
+  line-height: 1.7;
+  font-weight: 300;
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.name-highlight {
+  color: #ff6b81;
+  font-weight: 600;
+  font-size: 1.1em;
+  text-shadow: 0 0 10px rgba(255, 107, 129, 0.4);
+}
+
+/* Buttons Section */
+.buttons-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  min-height: 80px;
+  position: relative;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 36px;
+  border: none;
+  border-radius: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.5px;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Yes Button */
+.btn-yes {
+  background: linear-gradient(135deg, #ff6b81, #ff4757);
+  color: white;
+  box-shadow:
+    0 8px 30px rgba(255, 71, 87, 0.4),
+    0 0 0 0 rgba(255, 107, 129, 0.4);
+  animation: yesGlow 2s ease-in-out infinite;
+  z-index: 5;
+}
+
+@keyframes yesGlow {
+  0%, 100% {
+    box-shadow:
+      0 8px 30px rgba(255, 71, 87, 0.4),
+      0 0 0 0 rgba(255, 107, 129, 0.4);
+  }
+  50% {
+    box-shadow:
+      0 8px 40px rgba(255, 71, 87, 0.6),
+      0 0 0 12px rgba(255, 107, 129, 0);
+  }
+}
+
+.btn-yes:hover {
+  transform: scale(1.12);
+  box-shadow: 0 12px 45px rgba(255, 71, 87, 0.6);
+}
+
+.btn-yes:active {
+  transform: scale(1.05);
+}
+
+/* No Button */
+.btn-no {
+  background: linear-gradient(135deg, #4a3548, #3d2b3b);
+  color: #9a8a95;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: all 0.2s ease-out;
+  z-index: 100;
+  white-space: nowrap;
+}
+
+.btn-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .valentine-container {
+    padding: 30px 20px;
+    border-radius: 24px;
+    width: 92%;
+  }
+  .title-line-1 {
+    font-size: 22px;
+  }
+  .title-line-2 {
+    font-size: 42px;
+  }
+  .subtitle {
+    font-size: 13px;
+  }
+  .photo-frame {
+    width: 120px;
+    height: 120px;
+  }
+  .photo, .photo-placeholder {
+    width: 110px;
+    height: 110px;
+  }
+  .btn {
+    padding: 12px 28px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  .title-line-2 {
+    font-size: 36px;
+  }
+  .btn {
+    padding: 10px 22px;
+    font-size: 14px;
+  }
+}

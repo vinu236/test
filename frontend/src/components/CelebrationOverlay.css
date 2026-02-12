@@ -1,0 +1,120 @@
+/* ============================================
+   Celebration Overlay Styles
+   ============================================ */
+
+.celebration-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #1a0a1e 0%, #2d1135 50%, #1a0a1e 100%);
+  z-index: 1000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  overflow: hidden;
+}
+
+.celebration-overlay.active {
+  display: flex;
+  opacity: 1;
+}
+
+.celebration-content {
+  text-align: center;
+  animation: celebrateIn 0.8s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+  z-index: 10;
+}
+
+@keyframes celebrateIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.celebration-hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.celebration-emoji {
+  font-size: 80px;
+  margin-bottom: 16px;
+  animation: celebrateBounce 1s ease-in-out infinite;
+}
+
+@keyframes celebrateBounce {
+  0%, 100% { transform: scale(1) rotate(-5deg); }
+  50% { transform: scale(1.1) rotate(5deg); }
+}
+
+.celebration-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 72px;
+  background: linear-gradient(135deg, #ff6b81, #ff4757, #ffb8c6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 16px;
+  filter: drop-shadow(0 0 30px rgba(255, 107, 129, 0.5));
+}
+
+.celebration-text {
+  font-size: 20px;
+  color: #e8b4c8;
+  line-height: 1.8;
+  margin-bottom: 24px;
+  font-weight: 300;
+}
+
+.celebration-roses {
+  font-size: 36px;
+  margin-bottom: 24px;
+  animation: roseWave 2s ease-in-out infinite;
+  letter-spacing: 8px;
+}
+
+@keyframes roseWave {
+  0%, 100% { transform: translateY(0); }
+  25% { transform: translateY(-5px) rotate(2deg); }
+  75% { transform: translateY(5px) rotate(-2deg); }
+}
+
+.celebration-love {
+  font-family: 'Great Vibes', cursive;
+  font-size: 32px;
+  color: #ff6b81;
+  text-shadow: 0 0 20px rgba(255, 107, 129, 0.5);
+}
+
+.name-highlight {
+  color: #ff6b81;
+  font-weight: 600;
+  font-size: 1.1em;
+  text-shadow: 0 0 10px rgba(255, 107, 129, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .celebration-title {
+    font-size: 52px;
+  }
+  .celebration-text {
+    font-size: 16px;
+    padding: 0 20px;
+  }
+  .celebration-emoji {
+    font-size: 60px;
+  }
+  .celebration-love {
+    font-size: 24px;
+    padding: 0 20px;
+  }
+}
